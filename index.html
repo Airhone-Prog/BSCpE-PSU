@@ -257,44 +257,86 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 .teacher-dept{font-size:.73rem;color:var(--text-lt);margin-top:3px}
 
 /* ── EXAM TABLE ── */
-.exam-section-wrap{margin-bottom:20px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.exam-section-wrap{margin-bottom:22px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border)}
 .exam-date-banner{
-  background:var(--maroon-dk);color:#fff;
-  padding:10px 18px;font-weight:800;font-size:.86rem;display:flex;align-items:center;gap:10px;
+  background:var(--maroon-dk);color:var(--gold-lt);
+  padding:12px 20px;font-weight:800;font-size:.9rem;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:2px solid var(--gold-border);
 }
-.exam-date-banner .ebadge{font-size:.65rem;background:rgba(201,168,76,.22);border:1px solid var(--gold-border);padding:2px 10px;border-radius:20px;font-weight:700;letter-spacing:.04em;color:var(--gold-lt)}
+.exam-date-banner .ebadge{
+  font-size:.64rem;background:rgba(201,168,76,.18);
+  border:1px solid var(--gold-border);padding:3px 13px;
+  border-radius:20px;font-weight:800;letter-spacing:.08em;color:var(--gold-lt);
+}
 .exam-tbl-wrap{background:var(--white);overflow:hidden;overflow-x:auto}
-.exam-tbl{width:100%;border-collapse:collapse;font-size:.83rem;min-width:680px}
-.exam-tbl thead th{background:var(--maroon);color:#fff;padding:11px 14px;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
-.exam-tbl thead th:first-child,.exam-tbl thead th:nth-child(2){text-align:left}
+.exam-tbl{width:100%;border-collapse:collapse;font-size:.83rem;min-width:740px;table-layout:fixed}
+/* column widths matching Image 2 reference */
+.exam-tbl col.col-time{width:160px}
+.exam-tbl col.col-subj{width:225px}
+.exam-tbl col.col-sec {width:135px}
+.exam-tbl col.col-room{width:115px}
+/* col-instr takes remaining width */
+.exam-tbl thead th{
+  background:var(--maroon);color:var(--gold-lt);
+  padding:12px 14px;font-weight:800;font-size:.7rem;
+  text-transform:uppercase;letter-spacing:.09em;
+  text-align:center;border-right:1px solid rgba(255,255,255,.12);
+}
+.exam-tbl thead th.th-subj,
+.exam-tbl thead th.th-instr{text-align:left;padding-left:18px}
 .exam-tbl thead th:last-child{border-right:none}
-.exam-tbl tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:middle;text-align:center}
-.exam-tbl tbody td:first-child,.exam-tbl tbody td:nth-child(2){text-align:left}
+.exam-tbl tbody td{
+  padding:10px 14px;border-bottom:1px solid var(--border);
+  border-right:1px solid #EEE4DC;
+  vertical-align:middle;text-align:center;
+}
+.exam-tbl tbody td:last-child{border-right:none}
 .exam-tbl tbody tr:last-child td{border-bottom:none}
-.exam-tbl tbody tr:hover td:not(.lunch-cell){background:#fdf5f7!important}
+.exam-tbl tbody tr:hover td:not(.lunch-cell):not(.time-cell):not(.etd-subj){background:#fdf5f7}
+/* TIME cell — maroon left accent bar */
 .time-cell{
-  font-weight:800;color:var(--maroon);white-space:nowrap;
-  background:#FAF3EE;border-right:2px solid var(--border)!important;
+  font-weight:800;color:var(--maroon);white-space:pre-line;
+  background:#FAF0F2;
+  border-left:5px solid var(--maroon)!important;
+  border-right:2px solid var(--border)!important;
   vertical-align:middle!important;text-align:center!important;
-  padding:10px 12px!important;font-size:.82rem;
+  padding:12px 10px!important;font-size:.84rem;line-height:1.5;
 }
-.time-cell.mid-accent{border-left:4px solid #DC2626}
-.time-cell.fin-accent{border-left:4px solid #16A34A}
-.etd-subj{font-weight:700;color:var(--text);text-align:left!important}
-.etd-subj small{display:block;font-weight:400;font-size:.71rem;color:var(--text-lt);margin-top:2px}
-.etd-sec,.etd-room,.etd-instr{color:var(--text-lt);font-size:.82rem}
+/* Finals uses gold/green accent */
+.time-cell.fin-accent{
+  border-left-color:#16A34A!important;
+  background:#F0FAF4!important;color:#15803D!important;
+}
+/* SUBJECT cell */
+.etd-subj{
+  font-weight:800;color:var(--text);
+  text-align:left!important;padding:10px 14px 10px 18px!important;
+  border-right:2px solid var(--border)!important;
+  background:var(--offwhite);vertical-align:middle!important;
+}
+.etd-subj strong{display:block;font-size:.85rem;color:var(--maroon);margin-bottom:3px}
+.etd-subj small{display:block;font-weight:500;font-size:.73rem;color:var(--text-lt)}
+/* data cells */
+.etd-sec{font-weight:700;color:var(--maroon-lt);font-size:.83rem}
+.etd-room{font-weight:600;color:var(--text-md);font-size:.83rem}
+.etd-instr{text-align:left!important;padding-left:18px!important;font-weight:600;color:var(--text);font-size:.82rem}
+/* LUNCH row */
 .lunch-cell{
-  background:#FFFBEA!important;color:#92400E;font-size:.74rem;font-weight:800;
-  text-align:center!important;padding:9px 14px!important;
-  border-top:1px dashed #F6D860;border-bottom:1px dashed #F6D860;
-  letter-spacing:.06em;text-transform:uppercase;
+  background:linear-gradient(90deg,#FFFBEA,#FFF8E0,#FFFBEA)!important;
+  color:#92400E;font-size:.76rem;font-weight:800;
+  text-align:center!important;padding:11px 14px!important;
+  border-top:1.5px dashed #E9C46A!important;
+  border-bottom:1.5px dashed #E9C46A!important;
+  letter-spacing:.07em;text-transform:uppercase;
 }
+/* type toggle tabs — maroon for Midterm */
 .exam-tabs{display:flex;gap:8px;align-items:center}
 .exam-tab-btn{padding:6px 18px;border-radius:40px;font-family:var(--font-b);font-size:.78rem;font-weight:800;cursor:pointer;transition:all .14s;border:1.5px solid}
-.exam-tab-btn.mid{border-color:rgba(220,38,38,.4);color:#B91C1C;background:rgba(220,38,38,.06)}
-.exam-tab-btn.mid.on{background:#DC2626;border-color:#DC2626;color:#fff;box-shadow:0 2px 10px rgba(220,38,38,.28)}
+.exam-tab-btn.mid{border-color:rgba(123,28,46,.45);color:var(--maroon);background:var(--maroon-xlt)}
+.exam-tab-btn.mid.on{background:var(--maroon);border-color:var(--maroon);color:#fff;box-shadow:0 2px 12px rgba(123,28,46,.30)}
 .exam-tab-btn.fin{border-color:rgba(22,163,74,.4);color:#15803D;background:rgba(22,163,74,.06)}
-.exam-tab-btn.fin.on{background:#16A34A;border-color:#16A34A;color:#fff;box-shadow:0 2px 10px rgba(22,163,74,.28)}
+.exam-tab-btn.fin.on{background:#16A34A;border-color:#16A34A;color:#fff;box-shadow:0 2px 12px rgba(22,163,74,.28)}
 
 /* ── ABOUT ── */
 #s-about{background:var(--bg)}
