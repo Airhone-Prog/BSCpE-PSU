@@ -804,21 +804,31 @@ function renderExamTable(){
   const data=DB.examSched.filter(r=>Number(r.semester)===Number(st.eSem)&&r.academic_year===AY&&r.exam_type===st.eType);
   if(!data.length){renderBlankExam(container,ac);return;}
   const byDate={};
-  [...data].sort((a,b)=>a.exam_date>b.exam_date?1:-1).forEach(e=>{
+  // Sort by exam_date, then group slots by time_start_raw ("HH:MM" 24-hr) so AM/PM
+  // entries group correctly. The old key used time_start (12-hr) which caused slot
+  // mis-grouping and broke the sort order.
+  [...data].sort((a,b)=>a.exam_date>b.exam_date?1:a.exam_date<b.exam_date?-1:0).forEach(e=>{
     const dk=e.exam_date;
     if(!byDate[dk])byDate[dk]={display:e.exam_date_display||e.exam_date,day:e.exam_day||"",byTime:{}};
-    const tk=e.time_start||"00:00";
-    if(!byDate[dk].byTime[tk])byDate[dk].byTime[tk]={start:e.time_start,end:e.time_end,rows:[]};
+    const tk=e.time_start_raw||e.time_start||"00:00";
+    if(!byDate[dk].byTime[tk]){
+      const sk=e.time_sort_key??parseInt(tk.split(":")[0])*60+(parseInt(tk.split(":")[1])||0);
+      byDate[dk].byTime[tk]={start:e.time_start,end:e.time_end,raw:tk,sort_key:sk,rows:[]};
+    }
     byDate[dk].byTime[tk].rows.push(e);
   });
   let html="";
   Object.values(byDate).forEach(dg=>{
-    const slots=Object.values(dg.byTime).sort((a,b)=>(a.start||"").localeCompare(b.start||""));
+    // Sort numerically by minutes-since-midnight. The old localeCompare on the 12-hr
+    // string put "1:00 PM" before "8:00 AM" alphabetically, hiding afternoon slots.
+    const slots=Object.values(dg.byTime).sort((a,b)=>a.sort_key-b.sort_key);
     html+=`<div class="exam-section-wrap"><div class="exam-date-banner">📅 ${dg.display}<span class="ebadge">${(dg.day||"").toUpperCase()}</span></div>`+
       `<div class="exam-tbl-wrap"><table class="exam-tbl"><thead><tr><th style="min-width:145px">Time</th><th>Subject</th><th>Year &amp; Section</th><th>Room</th><th>Instructor-in-Charge</th></tr></thead><tbody>`;
     let ld=false;
     slots.forEach(slot=>{
-      if(!ld&&slot.start&&slot.start>="12:00"){ld=true;html+=`<tr><td colspan="5" class="lunch-cell">🍽 Lunch Break — 12:30 NN to 1:30 PM</td></tr>`;}
+      // Compare sort_key (numeric minutes) >= 720 (noon). The old string compare
+      // "1:30 PM" >= "12:00" was false alphabetically, so lunch never rendered.
+      if(!ld&&slot.sort_key>=720){ld=true;html+=`<tr><td colspan="5" class="lunch-cell">🍽 Lunch Break — 12:30 NN to 1:30 PM</td></tr>`;}
       const rs=slot.rows.length;
       slot.rows.forEach((e,i)=>{
         html+="<tr>";
