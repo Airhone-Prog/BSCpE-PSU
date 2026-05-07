@@ -1,14 +1,8 @@
 [
   {
     "id": 2,
-    "full_name": "Engr. A Maniago",
-    "short_name": "ENGR. A MANIAGO",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 39,
-    "full_name": "Engr. A Maniago",
-    "short_name": "ENGR. A MANIAGO",
+    "full_name": "ENGR. A MANIAG",
+    "short_name": "ENGR. A MANIAG",
     "employment_type": "Permanent"
   },
   {
@@ -202,6 +196,12 @@
     "full_name": "Engr. RR Puno",
     "short_name": "ENGR. RR PUNO",
     "employment_type": "Permanent"
+  },
+  {
+    "id": 39,
+    "full_name": "ENGR. A MANIAGO2",
+    "short_name": "ENGR. A MANIAGO2",
+    "employment_type": "Contract of Service"
   },
   {
     "id": 19,
