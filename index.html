@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>PSU CpE — Automated Scheduling Portal</title>
+<title>CPE AutoSched – Pampanga State University</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -75,14 +75,13 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 .screen{display:none;min-height:calc(100vh - var(--nav-h));flex-direction:column}
 .screen.active{display:flex}
 
-/* ═══════════════════════════════════════
-   HOME  — matches Image 2 layout
-═══════════════════════════════════════ */
+/* ══════════════════════════════
+   HOME
+══════════════════════════════ */
 #s-home{
   background:linear-gradient(165deg,var(--maroon-dk) 0%,var(--maroon) 50%,#9B2535 100%);
   position:relative;overflow:hidden;min-height:100vh;
 }
-/* decorative circles */
 #s-home::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(201,168,76,.07);top:-220px;right:-160px;pointer-events:none}
 #s-home::after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,255,255,.04);bottom:-170px;left:-80px;pointer-events:none}
 
@@ -90,63 +89,50 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   display:flex;flex-direction:column;align-items:center;
   padding:56px 28px 24px;text-align:center;position:relative;z-index:1;
 }
-
-/* circular PSU badge — matches image 2 style */
 .home-seal-wrap{
-  width:110px;height:110px;border-radius:50%;
+  width:114px;height:114px;border-radius:50%;
   border:2px solid var(--gold);
   background:rgba(0,0,0,.18);
   display:flex;align-items:center;justify-content:center;
   margin-bottom:22px;
-  box-shadow:0 0 0 6px rgba(201,168,76,.12),0 8px 30px rgba(0,0,0,.35);
+  box-shadow:0 0 0 8px rgba(201,168,76,.09),0 10px 36px rgba(0,0,0,.40);
   overflow:hidden;
   animation:sealPop .65s cubic-bezier(.34,1.56,.64,1) forwards;
 }
-.home-seal-wrap img{width:106px;height:106px;border-radius:50%;object-fit:cover;display:block}
+.home-seal-wrap img{width:110px;height:110px;border-radius:50%;object-fit:cover;display:block}
 @keyframes sealPop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
 
-/* university name block */
-.home-univ{
-  font-size:.72rem;font-weight:800;letter-spacing:.18em;
-  color:rgba(255,255,255,.9);text-transform:uppercase;margin-bottom:5px;
-}
-.home-college{font-size:.66rem;color:rgba(255,255,255,.48);letter-spacing:.04em}
+.home-univ{font-size:.72rem;font-weight:800;letter-spacing:.18em;color:rgba(255,255,255,.9);text-transform:uppercase;margin-bottom:5px}
+.home-college{font-size:.66rem;color:rgba(255,255,255,.45);letter-spacing:.04em}
 
-/* gold divider */
 .home-divider{
   width:140px;height:1.5px;
   background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  margin:22px auto;
+  margin:20px auto;
 }
-
-/* main title — matches Image 2's bold serif style */
 .home-title{
   font-family:var(--font-d);
   font-size:2.7rem;font-weight:900;
   color:#fff;line-height:1.15;
-  letter-spacing:-.02em;margin-bottom:14px;
+  letter-spacing:-.02em;margin-bottom:12px;
   text-shadow:0 2px 18px rgba(0,0,0,.30);
 }
 .home-sub{
-  font-size:.86rem;color:rgba(255,255,255,.48);
-  line-height:1.75;max-width:460px;margin:0 auto;
+  font-size:.86rem;color:rgba(255,255,255,.50);
+  line-height:1.75;max-width:480px;margin:0 auto 16px;
 }
-
-/* semester badge */
-.home-badge{
+/* AY badge — no pulsing dot, cleaner */
+.home-ay{
   display:inline-flex;align-items:center;gap:7px;
   background:var(--gold-dim);border:1px solid var(--gold-border);
-  color:var(--gold-lt);padding:5px 18px;border-radius:40px;
-  font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
-  margin-top:16px;margin-bottom:0;
+  color:var(--gold-lt);padding:5px 20px;border-radius:40px;
+  font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
 }
-.home-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold-lt);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
 /* feature cards */
 .home-cards{
   display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-  max-width:800px;width:100%;margin:36px auto 0;
+  max-width:820px;width:100%;margin:36px auto 0;
   padding:0 28px 64px;position:relative;z-index:1;
 }
 .home-card{
@@ -158,18 +144,18 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 .home-card:hover{
   background:rgba(255,255,255,.14);
   border-color:var(--gold-border);
-  transform:translateY(-5px);
-  box-shadow:0 14px 38px rgba(0,0,0,.28);
+  transform:translateY(-6px);
+  box-shadow:0 16px 42px rgba(0,0,0,.30);
 }
 .home-card:active{transform:none}
 .home-card-icon{
-  width:50px;height:50px;border-radius:13px;
+  width:52px;height:52px;border-radius:14px;
   background:var(--gold-dim);border:1px solid var(--gold-border);
   display:flex;align-items:center;justify-content:center;
-  font-size:1.45rem;margin:0 auto 15px;
+  font-size:1.5rem;margin:0 auto 15px;
 }
-.home-card-title{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:5px}
-.home-card-desc{font-size:.75rem;color:rgba(255,255,255,.40);line-height:1.55}
+.home-card-title{font-size:.97rem;font-weight:800;color:#fff;margin-bottom:6px}
+.home-card-desc{font-size:.76rem;color:rgba(255,255,255,.38);line-height:1.6}
 
 /* ── FILTER BAR ── */
 .filter-bar{
@@ -204,7 +190,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   transition:all .14s;white-space:nowrap;flex-shrink:0;
   box-shadow:0 2px 10px rgba(123,28,46,.25);
 }
-.btn-dl:hover{background:var(--maroon-lt)}
+.btn-dl:hover{background:var(--maroon-lt);box-shadow:0 4px 16px rgba(123,28,46,.35)}
 .btn-dl:disabled{opacity:.4;cursor:not-allowed}
 
 /* ── SCHEDULE CONTENT ── */
@@ -235,12 +221,6 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 }
 .gtbl tbody td{border-bottom:1px solid #EEE4DC;border-right:1px solid #EEE4DC}
 .gtbl tbody td:last-child{border-right:none}
-.lunch-row td{
-  background:#FFFBEA;color:#92400E;font-size:.67rem;font-weight:800;
-  text-align:center;padding:5px;
-  border-top:1px dashed #F6D860;border-bottom:1px dashed #F6D860;
-  letter-spacing:.07em;text-transform:uppercase;
-}
 
 /* ── TEACHER CARD ── */
 .teacher-card{
@@ -271,20 +251,17 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 }
 .exam-tbl-wrap{background:var(--white);overflow:hidden;overflow-x:auto}
 .exam-tbl{width:100%;border-collapse:collapse;font-size:.83rem;min-width:740px;table-layout:fixed}
-/* column widths matching Image 2 reference */
 .exam-tbl col.col-time{width:160px}
 .exam-tbl col.col-subj{width:225px}
 .exam-tbl col.col-sec {width:135px}
 .exam-tbl col.col-room{width:115px}
-/* col-instr takes remaining width */
 .exam-tbl thead th{
   background:var(--maroon);color:var(--gold-lt);
   padding:12px 14px;font-weight:800;font-size:.7rem;
   text-transform:uppercase;letter-spacing:.09em;
   text-align:center;border-right:1px solid rgba(255,255,255,.12);
 }
-.exam-tbl thead th.th-subj,
-.exam-tbl thead th.th-instr{text-align:left;padding-left:18px}
+.exam-tbl thead th.th-subj,.exam-tbl thead th.th-instr{text-align:left;padding-left:18px}
 .exam-tbl thead th:last-child{border-right:none}
 .exam-tbl tbody td{
   padding:10px 14px;border-bottom:1px solid var(--border);
@@ -294,7 +271,6 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 .exam-tbl tbody td:last-child{border-right:none}
 .exam-tbl tbody tr:last-child td{border-bottom:none}
 .exam-tbl tbody tr:hover td:not(.lunch-cell):not(.time-cell):not(.etd-subj){background:#fdf5f7}
-/* TIME cell — maroon left accent bar */
 .time-cell{
   font-weight:800;color:var(--maroon);white-space:pre-line;
   background:#FAF0F2;
@@ -303,12 +279,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   vertical-align:middle!important;text-align:center!important;
   padding:12px 10px!important;font-size:.84rem;line-height:1.5;
 }
-/* Finals uses gold/green accent */
-.time-cell.fin-accent{
-  border-left-color:#16A34A!important;
-  background:#F0FAF4!important;color:#15803D!important;
-}
-/* SUBJECT cell */
+.time-cell.fin-accent{border-left-color:#16A34A!important;background:#F0FAF4!important;color:#15803D!important}
 .etd-subj{
   font-weight:800;color:var(--text);
   text-align:left!important;padding:10px 14px 10px 18px!important;
@@ -317,11 +288,9 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 }
 .etd-subj strong{display:block;font-size:.85rem;color:var(--maroon);margin-bottom:3px}
 .etd-subj small{display:block;font-weight:500;font-size:.73rem;color:var(--text-lt)}
-/* data cells */
 .etd-sec{font-weight:700;color:var(--maroon-lt);font-size:.83rem}
 .etd-room{font-weight:600;color:var(--text-md);font-size:.83rem}
 .etd-instr{text-align:left!important;padding-left:18px!important;font-weight:600;color:var(--text);font-size:.82rem}
-/* LUNCH row */
 .lunch-cell{
   background:linear-gradient(90deg,#FFFBEA,#FFF8E0,#FFFBEA)!important;
   color:#92400E;font-size:.76rem;font-weight:800;
@@ -330,7 +299,6 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   border-bottom:1.5px dashed #E9C46A!important;
   letter-spacing:.07em;text-transform:uppercase;
 }
-/* type toggle tabs — maroon for Midterm */
 .exam-tabs{display:flex;gap:8px;align-items:center}
 .exam-tab-btn{padding:6px 18px;border-radius:40px;font-family:var(--font-b);font-size:.78rem;font-weight:800;cursor:pointer;transition:all .14s;border:1.5px solid}
 .exam-tab-btn.mid{border-color:rgba(123,28,46,.45);color:var(--maroon);background:var(--maroon-xlt)}
@@ -338,35 +306,51 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 .exam-tab-btn.fin{border-color:rgba(22,163,74,.4);color:#15803D;background:rgba(22,163,74,.06)}
 .exam-tab-btn.fin.on{background:#16A34A;border-color:#16A34A;color:#fff;box-shadow:0 2px 12px rgba(22,163,74,.28)}
 
-/* ── ABOUT ── */
+/* ══════════════════════════════
+   ABOUT  — refined
+══════════════════════════════ */
 #s-about{background:var(--bg)}
 .about-hero{
   background:linear-gradient(165deg,var(--maroon-dk) 0%,var(--maroon) 70%,#9B2535 100%);
-  padding:44px 36px 40px;position:relative;overflow:hidden;
+  padding:50px 36px 46px;position:relative;overflow:hidden;
 }
 .about-hero::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,.05);top:-160px;right:-100px}
-.about-hero-title{font-family:var(--font-d);font-size:1.9rem;font-weight:700;color:#fff;margin-bottom:8px;position:relative;z-index:1}
+.about-hero-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.2em;color:var(--gold-lt);text-transform:uppercase;margin-bottom:10px;position:relative;z-index:1;opacity:.8}
+.about-hero-title{font-family:var(--font-d);font-size:2rem;font-weight:900;color:#fff;margin-bottom:8px;position:relative;z-index:1;line-height:1.2}
 .about-hero-sub{font-size:.82rem;color:rgba(255,255,255,.40);position:relative;z-index:1}
-.about-body{max-width:780px;margin:0 auto;padding:40px 28px 60px}
-.about-section{margin-bottom:36px}
+.about-body{max-width:760px;margin:0 auto;padding:44px 28px 64px}
+.about-section{margin-bottom:40px}
 .about-section-title{
   font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--maroon);
-  margin-bottom:14px;padding-bottom:10px;border-bottom:1.5px solid var(--border);
+  margin-bottom:14px;padding-bottom:10px;
+  border-bottom:2px solid transparent;
+  border-image:linear-gradient(90deg,var(--maroon),transparent) 1;
 }
+.about-intro{
+  background:var(--white);border-radius:var(--radius);padding:24px 26px;
+  box-shadow:var(--shadow);border-left:5px solid var(--maroon);
+  font-size:.9rem;color:var(--text-md);line-height:1.9;
+}
+.about-intro strong{color:var(--maroon);font-weight:800}
 .about-text{font-size:.88rem;color:var(--text-lt);line-height:1.85;margin-bottom:12px}
 .about-text strong{color:var(--text);font-weight:700}
-.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.about-card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border-top:3px solid var(--gold)}
-.about-card-icon{font-size:1.4rem;margin-bottom:7px}
-.about-card-title{font-weight:800;font-size:.87rem;margin-bottom:4px;color:var(--text)}
-.about-card-text{font-size:.76rem;color:var(--text-lt);line-height:1.6}
-.role-table{width:100%;border-collapse:collapse;font-size:.84rem;border-radius:10px;overflow:hidden}
-.role-table th{background:var(--maroon);color:#fff;padding:10px 14px;text-align:left;font-weight:800;font-size:.74rem;letter-spacing:.06em}
-.role-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-lt)}
-.role-table tr:nth-child(even) td{background:var(--offwhite)}
-.role-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.7rem;font-weight:800;background:var(--maroon-xlt);color:var(--maroon)}
-.contact-info{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--text-lt);margin-bottom:10px}
-.contact-icon{font-size:1.1rem;width:26px;text-align:center}
+.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.about-card{
+  background:var(--white);border-radius:var(--radius);padding:22px;
+  box-shadow:var(--shadow);
+  border-top:3px solid transparent;
+  transition:transform .18s,box-shadow .18s;
+}
+.about-card:nth-child(1){border-top-color:var(--maroon)}
+.about-card:nth-child(2){border-top-color:var(--gold)}
+.about-card:nth-child(3){border-top-color:#16A34A}
+.about-card:nth-child(4){border-top-color:#1E5FA8}
+.about-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.about-card-icon{font-size:1.45rem;margin-bottom:9px}
+.about-card-title{font-weight:800;font-size:.9rem;margin-bottom:5px;color:var(--text)}
+.about-card-text{font-size:.78rem;color:var(--text-lt);line-height:1.65}
+.contact-info{display:flex;align-items:center;gap:12px;font-size:.86rem;color:var(--text-lt);margin-bottom:12px;padding:10px 14px;background:var(--white);border-radius:9px;box-shadow:0 1px 6px rgba(74,14,26,.07)}
+.contact-icon{font-size:1.1rem;width:26px;text-align:center;flex-shrink:0}
 
 /* ── UTILS ── */
 #printArea{display:none}
@@ -390,6 +374,8 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   .sched-content{padding:14px}
   .about-cards{grid-template-columns:1fr}
   .about-body{padding:24px 16px 44px}
+  .about-hero{padding:34px 22px 30px}
+  .about-hero-title{font-size:1.5rem}
 }
 @media print{
   .navbar,.filter-bar,.stats-row{display:none!important}
@@ -404,7 +390,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   <a class="nav-brand" onclick="goScreen('s-home')" href="#">
     <img class="nav-logo" src="psu_logo.png" alt="PSU Logo" onerror="this.style.display='none'"/>
     <div class="nav-wordmark">
-      <div class="nav-title">PSU CpE Portal</div>
+      <div class="nav-title">CPE AutoSched</div>
       <div class="nav-sub">Pampanga State University</div>
     </div>
   </a>
@@ -435,20 +421,16 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 <!-- ══ HOME ══ -->
 <div class="screen active" id="s-home">
   <div class="home-hero">
-
-    <!-- PSU Seal — uses psu_logo.png -->
     <div class="home-seal-wrap">
       <img src="psu_logo.png" alt="Pampanga State University Seal" onerror="this.parentElement.innerHTML='<span style=\'font-family:serif;font-size:1.6rem;font-weight:900;color:#C9A84C\'>PSU</span>'"/>
     </div>
-
     <div class="home-univ">Pampanga State University</div>
     <div class="home-college">College of Engineering and Architecture &middot; BS Computer Engineering</div>
     <div class="home-divider"></div>
     <div class="home-title">Automated Scheduling<br>Portal</div>
-    <div class="home-sub">View class schedules by section and year level, teacher schedules, and exam calendars for midterms and finals &mdash; all generated by AutoSched.</div>
-    <div class="home-badge"><span class="home-badge-dot"></span>2nd Semester &middot; AY 2025&ndash;2026</div>
+    <div class="home-sub">View class schedules by section and year level, teacher schedules, and exam calendars for midterms and finals - all generated automatically by the CPE AutoSched system.</div>
+    <div class="home-ay">A.Y. 2025&ndash;2026</div>
   </div>
-
   <div class="home-cards">
     <div class="home-card" onclick="goClassDirect()">
       <div class="home-card-icon">&#128197;</div>
@@ -559,47 +541,45 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 <!-- ══ ABOUT ══ -->
 <div class="screen" id="s-about">
   <div class="about-hero">
-    <div class="about-hero-title">About This Portal</div>
-    <div class="about-hero-sub">AutoSched &mdash; PSU CpE Department &middot; AY 2025&ndash;2026</div>
+    <div class="about-hero-eyebrow">Official Schedule Viewer</div>
+    <div class="about-hero-title">CPE AUTOSCHED &ndash; Pampanga State University<br>BS Computer Engineering Department</div>
+    <div class="about-hero-sub">Academic Year 2025&ndash;2026</div>
   </div>
   <div class="about-body">
+
     <div class="about-section">
-      <div class="about-section-title">What is AutoSched?</div>
-      <p class="about-text"><strong>AutoSched</strong> is the automated scheduling system of the <strong>BS Computer Engineering Department</strong> at Pampanga State University. It generates conflict-free class and exam schedules for all sections, assigns teachers and rooms, and publishes the result here — no login needed.</p>
-      <p class="about-text">This portal reads pre-exported JSON data files from the scheduling engine. The data files are loaded from the <code>data/</code> folder at the root of this repository.</p>
+      <div class="about-section-title">CPE AUTOSCHED</div>
+      <div class="about-intro">
+        This portal is the <strong>official schedule viewer</strong> of the <strong>BS Computer Engineering Department</strong> at <strong>Pampanga State University</strong>. Here you can browse class schedules by section and year level, view each faculty member's weekly teaching load, and check exam timetables for both Midterms and Finals — all generated automatically by the <strong>CPE AutoSched</strong> system. Simply select your year level, section, or teacher to view the schedule.
+      </div>
     </div>
+
     <div class="about-section">
       <div class="about-section-title">How to Use</div>
       <div class="about-cards">
-        <div class="about-card"><div class="about-card-icon">&#128197;</div><div class="about-card-title">Class Schedules</div><div class="about-card-text">Filter by semester, year level, and section. The weekly grid shows all subjects Monday–Saturday, 7 AM–7 PM.</div></div>
-        <div class="about-card"><div class="about-card-icon">&#128104;</div><div class="about-card-title">Teacher Schedules</div><div class="about-card-text">Pick a semester and teacher. The grid shows all assigned classes and which sections they handle.</div></div>
-        <div class="about-card"><div class="about-card-icon">&#128221;</div><div class="about-card-title">Examinations</div><div class="about-card-text">Toggle between Midterm and Finals. The table groups all sections by time slot with room and instructor info.</div></div>
-        <div class="about-card"><div class="about-card-icon">&#11015;&#65039;</div><div class="about-card-title">Download</div><div class="about-card-text">Each page has a Download button to save the current schedule view as a PNG image file.</div></div>
+        <div class="about-card">
+          <div class="about-card-icon">&#128197;</div>
+          <div class="about-card-title">Class Schedules</div>
+          <div class="about-card-text">Filter by semester, year level, and section. The weekly grid shows all subjects Monday–Saturday, 7 AM–7 PM.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">&#128104;</div>
+          <div class="about-card-title">Teacher Schedules</div>
+          <div class="about-card-text">Pick a semester and teacher. The grid shows all assigned classes and which sections they handle.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">&#128221;</div>
+          <div class="about-card-title">Examinations</div>
+          <div class="about-card-text">Toggle between Midterm and Finals. The table groups all sections by time slot with room and instructor info.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">&#11015;&#65039;</div>
+          <div class="about-card-title">Download</div>
+          <div class="about-card-text">Each page has a Download button to save the current schedule view as a PNG image file.</div>
+        </div>
       </div>
     </div>
-    <div class="about-section">
-      <div class="about-section-title">Repository Structure</div>
-      <p class="about-text">Expected file layout for GitHub Pages deployment:</p>
-      <pre style="background:var(--maroon-dk);color:#E8C97A;padding:14px 18px;border-radius:10px;font-size:.8rem;line-height:1.75;overflow-x:auto">BSCpE-PSU/
-├── index.html        ← this file
-├── psu_logo.png      ← PSU seal image
-└── data/
-    ├── sections.json
-    ├── teachers.json
-    ├── class_schedule.json
-    └── exam_schedule.json</pre>
-    </div>
-    <div class="about-section">
-      <div class="about-section-title">System Roles</div>
-      <table class="role-table">
-        <thead><tr><th>Role</th><th>Access</th><th>Capabilities</th></tr></thead>
-        <tbody>
-          <tr><td><span class="role-badge">Chairperson</span></td><td>Full</td><td>Approve &amp; override schedules, manage all data</td></tr>
-          <tr><td><span class="role-badge">Room Scheduler</span></td><td>Standard</td><td>Create &amp; manage class/exam schedules and room assignments</td></tr>
-          <tr><td><span class="role-badge">Student / Faculty</span></td><td>View Only</td><td>Browse and download schedules — no login required</td></tr>
-        </tbody>
-      </table>
-    </div>
+
     <div class="about-section">
       <div class="about-section-title">Contact</div>
       <div class="contact-info"><span class="contact-icon">&#127979;</span> College of Engineering and Architecture</div>
@@ -607,6 +587,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
       <div class="contact-info"><span class="contact-icon">&#128205;</span> Pampanga State University, Philippines</div>
       <div class="contact-info"><span class="contact-icon">&#128197;</span> Academic Year 2025–2026</div>
     </div>
+
   </div>
 </div>
 
@@ -697,15 +678,12 @@ function teacherPick(btn){
   const key=btn.dataset.key,val=Number(btn.dataset.val);st[key]=val;
   btn.closest("div").querySelectorAll(".pill-btn").forEach(b=>b.classList.remove("on"));
   btn.classList.add("on");
-  // Repopulate dropdown for the newly selected semester before rendering.
   st.tTeacherId=null;st.tTeacherName="";
   populateTeachers();renderTeacherSchedule();
 }
 function populateTeachers(){
   const sel=document.getElementById("selTeacher");
   if(!dbReady||!DB.teachers||!DB.classSched){sel.innerHTML='<option value="">— No teachers —</option>';st.tTeacherId=null;document.getElementById("teacherInfoCard").style.display="none";return;}
-  // Only show teachers who have at least one class in the currently selected semester + AY.
-  // Avoids showing teachers from the other semester in the dropdown.
   const activeSem=Number(st.tSem);
   const activeIds=new Set(DB.classSched.filter(r=>Number(r.semester)===activeSem&&r.academic_year===AY&&r.teacher_id).map(r=>String(r.teacher_id)));
   const semTeachers=DB.teachers.filter(t=>activeIds.has(String(t.id)));
@@ -719,7 +697,6 @@ function populateTeachers(){
   });
   if(gp.children.length)sel.appendChild(gp);
   if(gt.children.length)sel.appendChild(gt);
-  // Restore prior selection if that teacher is in this semester; otherwise pick first.
   if(st.tTeacherId&&activeIds.has(String(st.tTeacherId))){
     sel.value=st.tTeacherId;
   }else{
@@ -753,26 +730,44 @@ function renderTeacherSchedule(){
   }catch(e){document.getElementById("teacherGridView").innerHTML=errHtml(e.message);}
 }
 
-// ── GRID RENDERER ──
+// ── GRID RENDERER (no lunch break row) ──
 function renderGrid(data,container,role){
-  const SL=[];for(let h=7;h<19;h++)for(let m of[0,30])SL.push(String(h).padStart(2,"0")+":"+String(m).padStart(2,"0"));
-  function nS(ts){const v=ts.slice(0,5);let b=0;for(let i=0;i<SL.length;i++){if(SL[i]<=v)b=i;else break;}return b;}
-  function fR(ts){const h1=parseInt(ts.slice(0,2)),m1=parseInt(ts.slice(3,5));const tot=h1*60+m1+30,h2=Math.floor(tot/60),m2=tot%60;const f=(h,m)=>(h%12||12)+":"+String(m).padStart(2,"0")+(h>=12?"PM":"AM");return f(h1,m1)+"–"+f(h2,m2);}
+  const SL=[];
+  for(let h=7;h<19;h++)for(let m of[0,30])SL.push(String(h).padStart(2,"0")+":"+String(m).padStart(2,"0"));
+
+  function nS(ts){
+    const v=ts.slice(0,5);let b=0;
+    for(let i=0;i<SL.length;i++){if(SL[i]<=v)b=i;else break;}
+    return b;
+  }
+  function fR(ts){
+    const h1=parseInt(ts.slice(0,2)),m1=parseInt(ts.slice(3,5));
+    const tot=h1*60+m1+30,h2=Math.floor(tot/60),m2=tot%60;
+    const f=(h,m)=>(h%12||12)+":"+String(m).padStart(2,"0")+(h>=12?"PM":"AM");
+    return f(h1,m1)+"–"+f(h2,m2);
+  }
   const PAL=["#7B1C2E","#1E5FA8","#2D7A4F","#C9760A","#5A4E9E","#8B3A62","#1A6E6E","#B05C0A","#A33048","#2C6E9A","#3A8F5A","#7A5C1E"];
-  const cm={};let ci=0;function sc(c){if(!cm[c])cm[c]=PAL[ci++%PAL.length];return cm[c];}
+  const cm={};let ci=0;
+  function sc(c){if(!cm[c])cm[c]=PAL[ci++%PAL.length];return cm[c];}
+
   const grid=SL.map(()=>DAY.map(()=>null));
   data.forEach(r=>{
     const di=DAY.indexOf(r.day_of_week);if(di<0)return;
     const ts=(r.time_start_raw||"").slice(0,5),te=(r.time_end_raw||"").slice(0,5);
     const rs=nS(ts),re=nS(te),span=Math.max(1,re-rs);
-    if(grid[rs][di]===null){grid[rs][di]={item:r,rowspan:span};for(let s=rs+1;s<rs+span&&s<SL.length;s++)grid[s][di]="skip";}
+    if(grid[rs][di]===null){
+      grid[rs][di]={item:r,rowspan:span};
+      for(let s=rs+1;s<rs+span&&s<SL.length;s++)grid[s][di]="skip";
+    }
   });
+
   const RH=28;
   const colDefs='<colgroup><col style="width:92px">'+DAY.map(()=>'<col style="width:calc((100% - 92px)/6)">').join("")+"</colgroup>";
   const dayHdr=DAY.map(d=>`<th>${d.slice(0,3)}</th>`).join("");
+
   let rows="";
   SL.forEach((ts,si)=>{
-    if(ts==="12:00")rows+='<tr class="lunch-row"><td class="tcol">12–1 PM</td><td colspan="6">🍽 Lunch Break</td></tr>';
+    // No lunch break row — time slots flow continuously
     const cells=DAY.map((_,di)=>{
       const cell=grid[si][di];
       if(cell==="skip")return"";
@@ -791,6 +786,7 @@ function renderGrid(data,container,role){
     }).join("");
     rows+=`<tr><td class="tcol" style="height:${RH}px">${fR(ts)}</td>${cells}</tr>`;
   });
+
   container.classList.add("anim-in");
   container.innerHTML=`<div class="grid-wrap"><table class="gtbl">${colDefs}<thead><tr><th style="font-size:.67rem">Time</th>${dayHdr}</tr></thead><tbody>${rows}</tbody></table></div>`;
 }
@@ -822,29 +818,19 @@ function renderExamTable(){
     const dk=e.exam_date;
     if(!byDate[dk])byDate[dk]={display:e.exam_date_display||e.exam_date,day:e.exam_day||"",byTime:{}};
     const tk=e.time_start_raw||e.time_start||"00:00";
-    // Key by time AND subject_code — same as the app does (ts, te, subject_code).
-    // Without subject_code, two different subjects at the same time get merged into
-    // one row, mixing sections from different subjects incorrectly.
     const sk_num=e.time_sort_key??parseInt(tk.split(":")[0])*60+(parseInt(tk.split(":")[1])||0);
     const slotKey=tk+"|"+(e.subject_code||"");
-    if(!byDate[dk].byTime[slotKey]){
-      byDate[dk].byTime[slotKey]={start:e.time_start,end:e.time_end,raw:tk,sort_key:sk_num,subject_code:e.subject_code||"",rows:[]};
-    }
+    if(!byDate[dk].byTime[slotKey])byDate[dk].byTime[slotKey]={start:e.time_start,end:e.time_end,raw:tk,sort_key:sk_num,subject_code:e.subject_code||"",rows:[]};
     byDate[dk].byTime[slotKey].rows.push(e);
   });
   let html="";
   Object.values(byDate).forEach(dg=>{
-    // Sort by time first, then by subject_code so two subjects at the same time
-    // always appear in a consistent order matching the app.
     const slots=Object.values(dg.byTime).sort((a,b)=>a.sort_key-b.sort_key||(a.subject_code||"").localeCompare(b.subject_code||""));
     html+=`<div class="exam-section-wrap"><div class="exam-date-banner">📅 ${dg.display}<span class="ebadge">${(dg.day||"").toUpperCase()}</span></div>`+
       `<div class="exam-tbl-wrap"><table class="exam-tbl"><thead><tr><th style="min-width:145px">Time</th><th>Subject</th><th>Year &amp; Section</th><th>Room</th><th>Instructor-in-Charge</th></tr></thead><tbody>`;
     let ld=false;
     slots.forEach(slot=>{
-      // Compare sort_key (numeric minutes) >= 720 (noon). The old string compare
-      // "1:30 PM" >= "12:00" was false alphabetically, so lunch never rendered.
       if(!ld&&slot.sort_key>=720){ld=true;html+=`<tr><td colspan="5" class="lunch-cell">🍽 Lunch Break — 12:30 NN to 1:30 PM</td></tr>`;}
-      // Sort sections within each slot: BSCpE 1A → 1B → 1C → 2A … matches app order.
       slot.rows.sort((a,b)=>(a.section_name||"").localeCompare(b.section_name||""));
       const rs=slot.rows.length;
       slot.rows.forEach((e,i)=>{
@@ -888,7 +874,6 @@ async function downloadGridImage(data,role,titleText,subText,btnId){
   const dh=DAY.map(d=>`<th style="background:#4A0E1A;color:#fff;padding:8px;font-weight:800;text-align:center;width:${CW}px;border:1px solid #bbb;font-size:10px">${d}</th>`).join("");
   let rows="";
   SL.forEach((ts,si)=>{
-    if(ts==="12:00")rows+='<tr><td colspan="7" style="background:#FFFBEA;color:#92400E;font-size:9px;font-weight:800;text-align:center;padding:5px;border:1px solid #ddd">Lunch Break</td></tr>';
     const cells=DAY.map((_,di)=>{
       const cell=grid[si][di];
       if(cell==="skip")return"";
