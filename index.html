@@ -215,12 +215,6 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   display:flex;flex-direction:column;justify-content:center;
   padding:64px 48px 64px 60px;
 }
-.home-seal-wrap{
-  width:90px;height:90px;border-radius:50%;border:2px solid var(--gold);
-  background:rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;
-  margin-bottom:24px;box-shadow:0 0 0 8px rgba(201,168,76,.09),0 10px 36px rgba(0,0,0,.40);
-  overflow:hidden;animation:sealPop .65s cubic-bezier(.34,1.56,.64,1) forwards;
-}
 .home-seal-wrap img{width:86px;height:86px;border-radius:50%;object-fit:cover;display:block}
 @keyframes sealPop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
 .home-univ{font-size:.72rem;font-weight:800;letter-spacing:.18em;color:rgba(255,255,255,.85);text-transform:uppercase;margin-bottom:4px}
@@ -325,6 +319,48 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   .navbar,.sidebar,.stats-row{display:none!important}
   .main-content{padding:0}
 }
+
+/* ── FOOTER ── */
+.site-footer{
+  text-align:center;padding:18px 24px;font-size:.72rem;
+  color:var(--text-lt);border-top:1px solid var(--border);
+  background:var(--white);letter-spacing:.04em;
+}
+
+/* ── BACK BUTTON ── */
+.btn-back{
+  display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;
+  padding:7px 16px;border-radius:8px;border:1.5px solid var(--border);
+  background:var(--white);font-family:var(--font-b);font-size:.78rem;
+  font-weight:700;color:var(--text-lt);cursor:pointer;transition:all .14s;
+}
+.btn-back:hover{border-color:var(--maroon);color:var(--maroon);background:var(--maroon-xlt);}
+
+/* ── MOBILE NAV OVERLAY ── */
+.nav-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.45);z-index:997;
+}
+.nav-overlay.open{display:block;}
+
+/* ── SKELETON LOADING ── */
+.skeleton-wrap{padding:24px;display:flex;flex-direction:column;gap:12px;}
+.skel-row{
+  height:36px;border-radius:8px;
+  background:linear-gradient(90deg,#ede3dd 25%,#f8f0eb 50%,#ede3dd 75%);
+  background-size:200% 100%;animation:shimmer 1.4s infinite;
+}
+.skel-row.short{width:65%;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ── ENHANCED SEAL RING ── */
+.home-seal-wrap{
+  width:90px;height:90px;border-radius:50%;border:2px solid var(--gold);
+  background:rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;
+  box-shadow:0 0 0 8px rgba(201,168,76,.09),0 0 0 16px rgba(201,168,76,.04),0 10px 36px rgba(0,0,0,.40);
+  overflow:hidden;animation:sealPop .65s cubic-bezier(.34,1.56,.64,1) forwards;
+}
 </style>
 </head>
 <body>
@@ -358,6 +394,8 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
   <button class="nav-link" onclick="goExamDirect();closeDrawer()">📝 Examinations</button>
   <button class="nav-link" onclick="goScreen('s-about');closeDrawer()">ℹ️ About</button>
 </div>
+
+<div class="nav-overlay" id="navOverlay" onclick="closeDrawer()"></div>
 
 <div class="page-body">
 
@@ -444,12 +482,13 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
     </div>
 
     <div class="main-content">
+      <button class="btn-back" onclick="goScreen('s-home')">← Back to Home</button>
       <div class="page-heading">
         <div class="page-heading-title">Class Schedule</div>
         <div class="page-heading-sub" id="classSubText"></div>
       </div>
       <div class="stats-row" id="classStatsRow"></div>
-      <div id="classGridView"><div class="loading-s"><div class="spinner"></div><br>Loading…</div></div>
+      <div id="classGridView"><div class="skeleton-wrap"><div class="skel-row"></div><div class="skel-row short"></div><div class="skel-row"></div><div class="skel-row short"></div><div class="skel-row"></div></div></div>
     </div>
   </div>
 </div>
@@ -482,6 +521,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
     </div>
 
     <div class="main-content">
+      <button class="btn-back" onclick="goScreen('s-home')">← Back to Home</button>
       <div id="teacherInfoCard" class="teacher-card" style="display:none">
         <div class="teacher-avatar" id="teacherAvatar">T</div>
         <div>
@@ -490,7 +530,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
         </div>
       </div>
       <div class="stats-row" id="teacherStatsRow"></div>
-      <div id="teacherGridView"><div class="loading-s"><div class="spinner"></div><br>Loading…</div></div>
+      <div id="teacherGridView"><div class="skeleton-wrap"><div class="skel-row"></div><div class="skel-row short"></div><div class="skel-row"></div><div class="skel-row short"></div><div class="skel-row"></div></div></div>
     </div>
   </div>
 </div>
@@ -524,11 +564,12 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
     </div>
 
     <div class="main-content">
+      <button class="btn-back" onclick="goScreen('s-home')">← Back to Home</button>
       <div class="page-heading">
         <div class="page-heading-title" id="examTitleText">Midterm Examination Schedule</div>
         <div class="page-heading-sub" id="examSubText"></div>
       </div>
-      <div id="examTableView"><div class="loading-s"><div class="spinner"></div><br>Loading…</div></div>
+      <div id="examTableView"><div class="skeleton-wrap"><div class="skel-row"></div><div class="skel-row short"></div><div class="skel-row"></div><div class="skel-row short"></div><div class="skel-row"></div></div></div>
     </div>
   </div>
 </div>
@@ -589,6 +630,9 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);overflow-x
 </div>
 
 </div><!-- /page-body -->
+<footer class="site-footer">
+  &copy; 2025&ndash;2026 CPE AutoSched &middot; Pampanga State University &middot; BS Computer Engineering
+</footer>
 <div id="printArea"></div>
 
 <script>
@@ -624,12 +668,24 @@ function goScreen(id){
   window.scrollTo(0,0);
   document.querySelectorAll(".nav-link").forEach(l=>l.classList.remove("active"));
   const nid=NAV_MAP[id];if(nid)document.getElementById(nid)?.classList.add("active");
+  // sync mobile drawer
+  const drawerMap={"s-home":0,"s-class":1,"s-teacher":2,"s-exam":3,"s-about":4};
+  const di=drawerMap[id];
+  const drawerLinks=document.querySelectorAll("#navDrawer .nav-link");
+  drawerLinks.forEach(l=>l.classList.remove("active"));
+  if(di!==undefined&&drawerLinks[di])drawerLinks[di].classList.add("active");
 }
 function goClassDirect(){goScreen("s-class");populateClassSections();renderClassSchedule();}
 function goTeacherDirect(){goScreen("s-teacher");populateTeachers();renderTeacherSchedule();}
 function goExamDirect(){goScreen("s-exam");renderExamTable();}
-function toggleDrawer(){document.getElementById("navDrawer").classList.toggle("open");}
-function closeDrawer(){document.getElementById("navDrawer").classList.remove("open");}
+function toggleDrawer(){
+  document.getElementById("navDrawer").classList.toggle("open");
+  document.getElementById("navOverlay").classList.toggle("open");
+}
+function closeDrawer(){
+  document.getElementById("navDrawer").classList.remove("open");
+  document.getElementById("navOverlay").classList.remove("open");
+}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
 
 // ── CLASS SCHEDULE ──
@@ -861,7 +917,7 @@ function renderBlankExam(container,ac){
 
 // ── DOWNLOADS ──
 async function downloadGridImage(data,role,titleText,subText,btnId){
-  const btn=document.getElementById(btnId);btn.disabled=true;btn.textContent="⏳ Generating…";
+  const btn=document.getElementById(btnId);btn.disabled=true;btn.innerHTML='<span class="spinner" style="width:14px;height:14px;border-width:2px;margin:0;display:inline-block;vertical-align:middle"></span> Generating…';
   const pa=document.getElementById("printArea");
   const SL=[];for(let h=7;h<19;h++)for(let m of[0,30])SL.push(String(h).padStart(2,"0")+":"+String(m).padStart(2,"0"));
   function slotIdx(ts){const v=ts.slice(0,5);for(let i=SL.length-1;i>=0;i--){if(SL[i]<=v)return i;}return 0;}
@@ -896,7 +952,7 @@ async function downloadGridImage(data,role,titleText,subText,btnId){
     const safe=subText.replace(/[^\w\s\-\.]/g,"_").slice(0,50).trim().replace(/\s+/g,"_");
     link.download=`PSU_CpE_${safe}.png`;link.href=canvas.toDataURL("image/png");link.click();
   }catch(err){pa.style.display="none";alert("Image generation failed.");}
-  btn.disabled=false;btn.textContent="⬇ Download Schedule";
+  btn.disabled=false;btn.innerHTML='⬇ Download Schedule';
 }
 async function downloadClassImage(){
   await downloadGridImage(classData,"student","Class Schedule",document.getElementById("classSubText").textContent,"btnClassDL");
@@ -907,14 +963,14 @@ async function downloadTeacherImage(){
   await downloadGridImage(teacherData,"teacher","Teacher Schedule",`${nm} · ${sem} · AY ${AY}`,"btnTeacherDL");
 }
 async function downloadExamImage(){
-  const btn=document.getElementById("btnExamDL");btn.disabled=true;btn.textContent="⏳ Generating…";
+  const btn=document.getElementById("btnExamDL");btn.disabled=true;btn.innerHTML='<span class="spinner" style="width:14px;height:14px;border-width:2px;margin:0;display:inline-block;vertical-align:middle"></span> Generating…';
   try{
     const canvas=await html2canvas(document.getElementById("examTableView"),{scale:2,backgroundColor:"#fff",logging:false,useCORS:true});
     const link=document.createElement("a");
     link.download=`PSU_CpE_Exam_${st.eType}_Sem${st.eSem}.png`;
     link.href=canvas.toDataURL("image/png");link.click();
   }catch(e){alert("Download failed.");}
-  btn.disabled=false;btn.textContent="⬇ Download Schedule";
+  btn.disabled=false;btn.innerHTML='⬇ Download Schedule';
 }
 function errHtml(msg){return`<div class="empty"><div class="empty-icon">⚠️</div><div class="empty-title">Error</div><p style="font-size:.8rem;color:#B91C1C;margin-top:4px">${msg}</p></div>`;}
 
