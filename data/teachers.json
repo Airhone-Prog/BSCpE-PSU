@@ -1,128 +1,38 @@
 [
   {
-    "id": 2,
-    "full_name": "ENGR. A MANIAG",
-    "short_name": "ENGR. A MANIAG",
+    "id": 41,
+    "full_name": "Engr. A Maniago",
+    "short_name": "ENGR. A MANIAGO",
     "employment_type": "Permanent"
   },
   {
-    "id": 14,
+    "id": 44,
     "full_name": "Engr. A Nacpil",
     "short_name": "ENGR. A NACPIL",
     "employment_type": "Permanent"
   },
   {
-    "id": 51,
-    "full_name": "Engr. A Nacpil",
-    "short_name": "ENGR. A NACPIL",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 12,
-    "full_name": "ENGR. AK DELA CRUZ",
-    "short_name": "ENGR. AK DELA CRUZ",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 49,
+    "id": 42,
     "full_name": "Engr. AK Dela Cruz",
     "short_name": "ENGR. AK DELA CRUZ",
     "employment_type": "Permanent"
   },
   {
-    "id": 4,
-    "full_name": "Engr. D Castro",
-    "short_name": "ENGR. D CASTRO",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 41,
-    "full_name": "Engr. D Castro",
-    "short_name": "ENGR. D CASTRO",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 37,
-    "full_name": "Engr. Dept Coordinator",
-    "short_name": "ENGR. COORD.",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 74,
-    "full_name": "Engr. Dept Coordinator",
-    "short_name": "ENGR. COORD.",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 3,
+    "id": 47,
     "full_name": "Engr. EJ Galang",
     "short_name": "ENGR. EJ GALANG",
     "employment_type": "Permanent"
   },
   {
-    "id": 40,
-    "full_name": "Engr. EJ Galang",
-    "short_name": "ENGR. EJ GALANG",
+    "id": 39,
+    "full_name": "Engr. J Grume",
+    "short_name": "ENGR. J GRUME",
     "employment_type": "Permanent"
   },
   {
-    "id": 20,
-    "full_name": "Engr. Gabilan",
-    "short_name": "ENGR. GABILAN",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 57,
-    "full_name": "Engr. Gabilan",
-    "short_name": "ENGR. GABILAN",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 11,
-    "full_name": "Engr. I Grume",
-    "short_name": "ENGR. I GRUME",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 48,
-    "full_name": "Engr. I Grume",
-    "short_name": "ENGR. I GRUME",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 15,
-    "full_name": "Engr. J Jurado",
-    "short_name": "ENGR. J JURADO",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 52,
-    "full_name": "Engr. J Jurado",
-    "short_name": "ENGR. J JURADO",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 9,
-    "full_name": "Engr. J Regala",
-    "short_name": "ENGR. J REGALA",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 46,
-    "full_name": "Engr. J Regala",
-    "short_name": "ENGR. J REGALA",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 6,
-    "full_name": "Engr. JJ De Leon",
-    "short_name": "ENGR. JJ DE LEON",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 43,
-    "full_name": "Engr. JJ De Leon",
-    "short_name": "ENGR. JJ DE LEON",
+    "id": 49,
+    "full_name": "Engr. JJ Deleon",
+    "short_name": "ENGR. JJ DELEON",
     "employment_type": "Permanent"
   },
   {
@@ -138,309 +48,87 @@
     "employment_type": "Permanent"
   },
   {
-    "id": 5,
-    "full_name": "Engr. K Pineda",
+    "id": 3,
+    "full_name": "ENGR. K PINEDA",
     "short_name": "ENGR. K PINEDA",
     "employment_type": "Permanent"
   },
   {
-    "id": 42,
-    "full_name": "Engr. K Pineda",
+    "id": 40,
+    "full_name": "ENGR. K PINEDA",
     "short_name": "ENGR. K PINEDA",
     "employment_type": "Permanent"
   },
   {
-    "id": 13,
-    "full_name": "Engr. KE Ang Faina",
-    "short_name": "ENGR. KE ANG FAINA",
+    "id": 46,
+    "full_name": "Engr. MP Balingit",
+    "short_name": "ENGR. MP BALINGIT",
     "employment_type": "Permanent"
   },
   {
-    "id": 50,
-    "full_name": "Engr. KE Ang Faina",
-    "short_name": "ENGR. KE ANG FAINA",
+    "id": 43,
+    "full_name": "Engr. RR Puno",
+    "short_name": "ENGR. RR PUNO",
     "employment_type": "Permanent"
+  },
+  {
+    "id": 4,
+    "full_name": "ENGR. A MANIAGO",
+    "short_name": "ENGR. A MANIAGO",
+    "employment_type": "Contract of Service"
   },
   {
     "id": 7,
-    "full_name": "Engr. MP Balingit",
-    "short_name": "ENGR. MP BALINGIT",
-    "employment_type": "Permanent"
+    "full_name": "ENGR. A NACPIL",
+    "short_name": "ENGR. A NACPIL",
+    "employment_type": "Contract of Service"
   },
   {
-    "id": 44,
-    "full_name": "Engr. MP Balingit",
-    "short_name": "ENGR. MP BALINGIT",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 8,
-    "full_name": "Engr. RC Pamintuan",
-    "short_name": "ENGR. RC PAMINTUAN",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 45,
-    "full_name": "Engr. RC Pamintuan",
-    "short_name": "ENGR. RC PAMINTUAN",
-    "employment_type": "Permanent"
+    "id": 5,
+    "full_name": "ENGR. AK DELA CRUZ",
+    "short_name": "ENGR. AK DELA CRUZ",
+    "employment_type": "Contract of Service"
   },
   {
     "id": 10,
-    "full_name": "Engr. RR Puno",
-    "short_name": "ENGR. RR PUNO",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 47,
-    "full_name": "Engr. RR Puno",
-    "short_name": "ENGR. RR PUNO",
-    "employment_type": "Permanent"
-  },
-  {
-    "id": 39,
-    "full_name": "ENGR. A MANIAGO2",
-    "short_name": "ENGR. A MANIAGO2",
+    "full_name": "ENGR. EJ GALANG",
+    "short_name": "ENGR. EJ GALANG",
     "employment_type": "Contract of Service"
   },
   {
-    "id": 19,
-    "full_name": "Engr. JG Guanlao",
-    "short_name": "MR. JG GUANLAO",
+    "id": 2,
+    "full_name": "ENGR. J GRUME",
+    "short_name": "ENGR. J GRUME",
     "employment_type": "Contract of Service"
   },
   {
-    "id": 56,
-    "full_name": "Engr. JG Guanlao",
-    "short_name": "MR. JG GUANLAO",
+    "id": 12,
+    "full_name": "ENGR. JJ DELEON",
+    "short_name": "ENGR. JJ DELEON",
     "employment_type": "Contract of Service"
   },
   {
-    "id": 16,
+    "id": 13,
+    "full_name": "ENGR. JR PEÑA",
+    "short_name": "ENGR. JR PEÑA",
+    "employment_type": "Contract of Service"
+  },
+  {
+    "id": 50,
     "full_name": "Engr. JR Peña",
     "short_name": "ENGR. JR PEÑA",
     "employment_type": "Contract of Service"
   },
   {
-    "id": 53,
-    "full_name": "Engr. JR Peña",
-    "short_name": "ENGR. JR PEÑA",
+    "id": 9,
+    "full_name": "ENGR. MP BALINGIT",
+    "short_name": "ENGR. MP BALINGIT",
     "employment_type": "Contract of Service"
   },
   {
-    "id": 17,
-    "full_name": "Engr. X",
-    "short_name": "ENGR. X",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 54,
-    "full_name": "Engr. X",
-    "short_name": "ENGR. X",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 18,
-    "full_name": "Engr. Y",
-    "short_name": "ENGR. Y",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 55,
-    "full_name": "Engr. Y",
-    "short_name": "ENGR. Y",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 28,
-    "full_name": "Mr. AG Mendoza",
-    "short_name": "MR. AG MENDOZA",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 65,
-    "full_name": "Mr. AG Mendoza",
-    "short_name": "MR. AG MENDOZA",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 26,
-    "full_name": "Mr. C Sinio",
-    "short_name": "MR. C SINIO",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 63,
-    "full_name": "Mr. C Sinio",
-    "short_name": "MR. C SINIO",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 25,
-    "full_name": "Mr. D Narciso",
-    "short_name": "MR. D NARCISO",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 62,
-    "full_name": "Mr. D Narciso",
-    "short_name": "MR. D NARCISO",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 21,
-    "full_name": "Mr. D Tuazon",
-    "short_name": "MR. D TUAZON",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 58,
-    "full_name": "Mr. D Tuazon",
-    "short_name": "MR. D TUAZON",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 30,
-    "full_name": "Mr. JM Dalusong",
-    "short_name": "MR. JM DALUSONG",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 67,
-    "full_name": "Mr. JM Dalusong",
-    "short_name": "MR. JM DALUSONG",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 34,
-    "full_name": "Mr. KJ Jimenez",
-    "short_name": "MR. KJ JIMENEZ",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 71,
-    "full_name": "Mr. KJ Jimenez",
-    "short_name": "MR. KJ JIMENEZ",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 29,
-    "full_name": "Mr. M Sunga",
-    "short_name": "MR. M SUNGA",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 66,
-    "full_name": "Mr. M Sunga",
-    "short_name": "MR. M SUNGA",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 36,
-    "full_name": "Mr. NSTP Coordinator",
-    "short_name": "NSTP COORD.",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 73,
-    "full_name": "Mr. NSTP Coordinator",
-    "short_name": "NSTP COORD.",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 33,
-    "full_name": "Mr. R Paule",
-    "short_name": "MR. R PAULE",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 70,
-    "full_name": "Mr. R Paule",
-    "short_name": "MR. R PAULE",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 24,
-    "full_name": "Mr. RJ Nabong",
-    "short_name": "MR. RJ NABONG",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 61,
-    "full_name": "Mr. RJ Nabong",
-    "short_name": "MR. RJ NABONG",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 22,
-    "full_name": "Ms. D Bondoc",
-    "short_name": "MS. D BONDOC",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 59,
-    "full_name": "Ms. D Bondoc",
-    "short_name": "MS. D BONDOC",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 23,
-    "full_name": "Ms. DM Diala",
-    "short_name": "MS. DM DIALA",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 60,
-    "full_name": "Ms. DM Diala",
-    "short_name": "MS. DM DIALA",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 32,
-    "full_name": "Ms. J Arrozal",
-    "short_name": "MS. J ARROZAL",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 69,
-    "full_name": "Ms. J Arrozal",
-    "short_name": "MS. J ARROZAL",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 27,
-    "full_name": "Ms. J Enriquez",
-    "short_name": "MS. J ENRIQUEZ",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 64,
-    "full_name": "Ms. J Enriquez",
-    "short_name": "MS. J ENRIQUEZ",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 31,
-    "full_name": "Ms. R Bumagat",
-    "short_name": "MS. R BUMAGAT",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 68,
-    "full_name": "Ms. R Bumagat",
-    "short_name": "MS. R BUMAGAT",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 35,
-    "full_name": "Prof. Chem Instructor",
-    "short_name": "CHEM INSTR.",
-    "employment_type": "Contract of Service"
-  },
-  {
-    "id": 72,
-    "full_name": "Prof. Chem Instructor",
-    "short_name": "CHEM INSTR.",
+    "id": 6,
+    "full_name": "ENGR. RR PUNO",
+    "short_name": "ENGR. RR PUNO",
     "employment_type": "Contract of Service"
   }
 ]
